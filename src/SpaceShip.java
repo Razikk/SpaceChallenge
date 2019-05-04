@@ -6,5 +6,5 @@ public interface SpaceShip {
     // checks if adding item will exceed rocket weight limit; returns false if limit exceeded
     boolean canCarry(Item item);
     // updates the current weight of the rocket
-    int carry(Item item);
+    void carry(Item item);
 }
