@@ -10,7 +10,8 @@ public class Main {
         ArrayList<Item> phase1Items = simulation.loadItems(ph1ItemsList);
         ArrayList<Item> phase2Items = simulation.loadItems(ph2ItemsList);
         // load Items onto U1 Rockets
-        ArrayList<U1> u1Rockets = simulation.loadU1(phase1Items);
+        ArrayList<U1> u1Phase1Rockets = simulation.loadU1(phase1Items);
+        ArrayList<U1> u1Phase2Rockets = simulation.loadU1(phase2Items);
 
     }
 }
