@@ -4,9 +4,8 @@ import java.io.File;
 
 public class Simulation {
 
-    ArrayList<Item> loadedItems = new ArrayList<>();
-
-    public void loadItems(File itemsFile) throws Exception {
+    private ArrayList loadItems(File itemsFile) throws Exception {
+        ArrayList<Item> itemsArray = new ArrayList<>();
         Scanner scanner = new Scanner(itemsFile);
         while (scanner.hasNextLine()){
             String line = scanner.nextLine();
@@ -14,7 +13,8 @@ public class Simulation {
             String itemName = lineSplit[0];
             int itemWeight = Integer.parseInt(lineSplit[1]);
             Item item = new Item(itemName, itemWeight);
-            loadedItems.add(item);
+            itemsArray.add(item);
         }
+        return itemsArray;
     }
 }
