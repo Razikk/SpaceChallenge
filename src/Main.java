@@ -4,14 +4,13 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
         Simulation simulation = new Simulation();
-        File phase1Items = new File("phase-1.txt");
-        ArrayList<Item> itemsList = simulation.loadItems(phase1Items);
-        ArrayList<U1> u1Rockets = simulation.loadU1(itemsList);
+        File ph1ItemsList = new File("phase-1.txt");
+        File ph2ItemsList = new File ("phase-2.txt");
+        // load file contents into Item Lists
+        ArrayList<Item> phase1Items = simulation.loadItems(ph1ItemsList);
+        ArrayList<Item> phase2Items = simulation.loadItems(ph2ItemsList);
+        // load Items onto U1 Rockets
+        ArrayList<U1> u1Rockets = simulation.loadU1(phase1Items);
 
-
-        for (U1 rocket :
-                u1Rockets) {
-            System.out.println(rocket.rocketWeight);
-        }
     }
 }
