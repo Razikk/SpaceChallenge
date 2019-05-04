@@ -11,4 +11,9 @@ public class U2 extends Rocket {
         double explosionChance = (0.04 * (rocketWeight / maxWeight));
         return !(Math.random() <= explosionChance);
     }
+
+    public boolean land() {
+        double crashChance = (0.08 * (rocketWeight / maxWeight));
+        return !(Math.random() <= crashChance);
+    }
 }
