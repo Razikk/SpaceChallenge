@@ -48,5 +48,16 @@ public class Simulation {
         return u2s;
     }
 
+    double runSimulation(ArrayList<Rocket> rockets) {
+        double totalCost = 0;
+        for (Rocket rocket :
+                rockets) {
+            totalCost += rocket.cost;
+            while (!rocket.launch() || !rocket.land()) {
+                totalCost += rocket.cost;
+            }
+        }
+        return totalCost;
+    }
 
 }
