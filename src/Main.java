@@ -11,12 +11,7 @@ public class Main {
         rocketA.carry(beefStew);
         rocketA.printValues();
 
-        double explosionChance = (0.05 * (10000.0 / 18000.0));
-        int explosions = 0;
-        for (int i=0; i<100000; i++) {
-            if (Math.random() <= explosionChance) explosions++;
-        }
-        System.out.println(explosions);
+        Rocket u1Rocket = new U1();
 
     }
 }
