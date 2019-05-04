@@ -32,4 +32,21 @@ public class Simulation {
         }
         return u1s;
     }
+
+    public ArrayList<U2> loadU2(ArrayList<Item> itemsList) {
+        ArrayList<U2> u2s = new ArrayList<>();
+        U2 u2Rocket = new U2();
+        for (Item item : itemsList) {
+            if (u2Rocket.rocketWeight + item.getWeight() < u2Rocket.maxWeight){
+                u2Rocket.rocketWeight += item.getWeight();
+            }
+            else {
+                u2s.add(u2Rocket);
+                u2Rocket = new U2();
+            }
+        }
+        return u2s;
+    }
+
+
 }
