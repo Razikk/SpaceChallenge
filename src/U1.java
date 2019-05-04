@@ -1,5 +1,4 @@
 public class U1 extends Rocket {
-    double cost;
 
     U1(){
         rocketWeight = 10_000;

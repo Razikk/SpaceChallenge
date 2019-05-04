@@ -1,6 +1,7 @@
 public class Rocket implements SpaceShip {
     double rocketWeight = 0;
     double maxWeight = 0;
+    double cost = 0;
 
     public boolean launch() {return true;}
 
