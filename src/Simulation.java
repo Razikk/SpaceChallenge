@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
@@ -18,8 +19,8 @@ public class Simulation {
         return itemsArray;
     }
 
-    public ArrayList<U1> loadU1(ArrayList<Item> itemsList) {
-        ArrayList<U1> u1s = new ArrayList<>();
+    public ArrayList<Rocket> loadU1(ArrayList<Item> itemsList) {
+        ArrayList<Rocket> u1s = new ArrayList<>();
         U1 u1Rocket = new U1();
         for (Item item : itemsList) {
             if (u1Rocket.rocketWeight + item.getWeight() < u1Rocket.maxWeight){
@@ -33,8 +34,8 @@ public class Simulation {
         return u1s;
     }
 
-    public ArrayList<U2> loadU2(ArrayList<Item> itemsList) {
-        ArrayList<U2> u2s = new ArrayList<>();
+    public ArrayList<Rocket> loadU2(ArrayList<Item> itemsList) {
+        ArrayList<Rocket> u2s = new ArrayList<>();
         U2 u2Rocket = new U2();
         for (Item item : itemsList) {
             if (u2Rocket.rocketWeight + item.getWeight() < u2Rocket.maxWeight){
@@ -56,6 +57,7 @@ public class Simulation {
             while (!rocket.launch() || !rocket.land()) {
                 totalCost += rocket.cost;
             }
+
         }
         return totalCost;
     }

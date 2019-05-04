@@ -3,7 +3,7 @@ public class U1 extends Rocket {
     U1(){
         rocketWeight = 10_000;
         maxWeight = 18_000;
-        cost = 100_000_000;
+        cost = 100;
     }
 
     public boolean launch() {
