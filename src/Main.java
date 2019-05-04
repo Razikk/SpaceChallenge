@@ -1,17 +1,17 @@
+import java.io.File;
+import java.util.ArrayList;
+
 public class Main {
-    public static void main(String[] args) {
-        Rocket rocketA = new Rocket();
-        rocketA.printValues();
-        rocketA.maxWeight = 18_000;
-        rocketA.rocketWeight = 10_000;
-        rocketA.printValues();
-        Item beefStew = new Item("Beef Stew", 100);
+    public static void main(String[] args) throws Exception {
+        Simulation simulation = new Simulation();
+        File phase1Items = new File("phase-1.txt");
+        ArrayList<Item> itemsList = simulation.loadItems(phase1Items);
+        ArrayList<U1> u1Rockets = simulation.loadU1(itemsList);
 
-        System.out.println(rocketA.canCarry(beefStew));
-        rocketA.carry(beefStew);
-        rocketA.printValues();
 
-        Rocket u1Rocket = new U1();
-
+        for (U1 rocket :
+                u1Rockets) {
+            System.out.println(rocket.rocketWeight);
+        }
     }
 }

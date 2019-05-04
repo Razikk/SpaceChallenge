@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Simulation {
 
-    private ArrayList loadItems(File itemsFile) throws Exception {
+    public ArrayList<Item> loadItems(File itemsFile) throws Exception {
         ArrayList<Item> itemsArray = new ArrayList<>();
         Scanner scanner = new Scanner(itemsFile);
         while (scanner.hasNextLine()){
@@ -16,5 +16,20 @@ public class Simulation {
             itemsArray.add(item);
         }
         return itemsArray;
+    }
+
+    public ArrayList<U1> loadU1(ArrayList<Item> itemsList) {
+        ArrayList<U1> u1s = new ArrayList<>();
+        U1 u1Rocket = new U1();
+        for (Item item : itemsList) {
+            if (u1Rocket.rocketWeight + item.getWeight() < u1Rocket.maxWeight){
+                u1Rocket.rocketWeight += item.getWeight();
+            }
+            else {
+                u1s.add(u1Rocket);
+                u1Rocket = new U1();
+            }
+        }
+        return u1s;
     }
 }
